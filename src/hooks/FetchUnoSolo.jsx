@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react"
-import { fetchOneDigimon } from "../services/apiDigimon"
+import { fetchOneAnimal } from "../services/apianimal"
 
-export const useFetchOneDigimon = (digimonSearched) => {
-    const [ digimon, setDigimon ] = useState(null)
+export const useFetchOneAnimal = (animalSearched) => {
+    const [ animal, setanimal ] = useState(null)
     const [ loading, setLoading ] = useState(true)
     const [ error, setError ] = useState(null)
 
     useEffect(() => {
-        const getDigimon = async () => {
+        const getanimal = async () => {
             try {
-                const dataDigimon = await fetchOneDigimon(digimonSearched)
-                setDigimon(dataDigimon)
+                const dataanimal = await fetchOneanimal(animalSearched)
+                setanimal(dataanimal)
             } catch (err) {
                 setError(err)
             } finally {
@@ -18,12 +18,12 @@ export const useFetchOneDigimon = (digimonSearched) => {
             }
         }
 
-        getDigimon()
-    }, [digimonSearched])
+        getanimal()
+    }, [animalSearched])
 
     if(error) {
         throw error
     }
 
-    return { digimon, loading }
+    return { animal, loading }
 }

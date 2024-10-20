@@ -1,3 +1,6 @@
+
+
+
 export const DetalleAdoptame = ({ adoptame }) => {
     return (
         <div className="card">
