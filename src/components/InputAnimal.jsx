@@ -1,11 +1,12 @@
-export const InputAnimal = ({ animal, handleOnChange }) => {
+export const InputAnimal = ({ animal, handleOnChange, handleKeyDown }) => {
     return (
         <div className="input-animal">
             <input 
             type="text" 
-            placeholder="Juntos, construyamos una gran familia."
+            placeholder="Ingrese opción aquí"
             value={ animal }
-            onChange={handleOnChange}/>
+            onChange={handleOnChange}
+            onKeyDown={handleKeyDown}/>
         </div>
-    )
-}
+    );
+};

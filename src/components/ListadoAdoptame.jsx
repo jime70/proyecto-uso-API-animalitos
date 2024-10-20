@@ -1,20 +1,22 @@
 //listado para llamar después a los animalitos
-import React from 'react';
+//import React from 'react';
 import { TarjetaAdoptame } from './TarjetaAdoptame'; // Exportación nombrada
-import { fetchAnimalitos } from '../hooks/fetchAnimalitos';
+import { FetchAnimalitos } from '../hooks/fetchAnimalitos';
 
 export const ListadoAdoptame = () => {
-    const { animales, loading } = fetchAnimalitos();
+    const { animales, loading } = FetchAnimalitos();
 
     if (loading) {
         return <p>Cargando...</p>;
     }
 
     return (
-        <div className="listado-adoptame">
+        <div className="container mx-auto p-4">
+            <div className='grid grid-cols-4 gap-4'> 
             {animales.map((adoptame) => (
                 <TarjetaAdoptame key={adoptame.id} adoptame={adoptame} />
             ))}
+            </div>
         </div>
     );
 };

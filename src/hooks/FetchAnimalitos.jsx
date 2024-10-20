@@ -1,6 +1,7 @@
 import { fetchApiAdopcion } from '../services/apiAdopcion';
+import { useState, useEffect } from "react";
 
-export const fetchAnimalitos = () => {
+export const FetchAnimalitos = () => {
     const [ animales, setAnimales ] = useState([]);
     const [ loading, setLoading ] = useState(true);
     const [ error, setError ] = useState(null);
@@ -9,14 +10,14 @@ export const fetchAnimalitos = () => {
         const getData = async() => {
             try {
                 const dataAnimales = await fetchApiAdopcion(); // Llama API de adopción
-                setAnimales(dataAnimales.content);
+                console.log("Bienvenidos a nuestra gran familia de adopción de animalitos", dataAnimales)
+                setAnimales(dataAnimales.data);
             } catch (err) {
                 setError(err);
             } finally {
                 setLoading(false);
             }
         }
-
         getData();
     }, []);
 

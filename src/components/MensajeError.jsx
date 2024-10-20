@@ -1,4 +1,4 @@
-export const ErrorBoundary = ({ error, resetErrorBoundary }) => {
+export const MensajeError = ({ error, resetErrorBoundary }) => {
     return (
         <div role="alert">
             <p>Algo salió mal...</p>

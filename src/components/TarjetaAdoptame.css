@@ -1,0 +1,36 @@
+/* Archivo: TarjetaAdoptame.css */
+
+/* Contenedor de las tarjetas */
+.card-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 20px; 
+    padding: 20px;
+}
+
+
+.card {
+    background-color: rgb(179, 189, 209);
+    flex: 1 1 calc(33.333% - 40px); /* Tres tarjetas por fila, menos el espacio de gap */
+    max-width: 250px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    border-radius: 10%;
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+body {
+    background-color: rgba(207, 248, 234, 0.877);
+}

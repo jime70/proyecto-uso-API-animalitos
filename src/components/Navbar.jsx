@@ -1,23 +1,35 @@
-export const Navbar = () => {
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+    
+    const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    
     return (
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contáctanos</a>
-        </li>
-      </ul>
+    <nav className="bg-gray-800 p-4">
+    <div className="container mx-auto flex justify-between items-center">
+    <Link to="/" className="text-white font-bold text-xl">Logo</Link>
+    <div className="md:hidden">
+    <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+    </button>
     </div>
-  </div>
-</nav>
-    )
-}
-
+    
+            <div className="hidden md:flex space-x-4">
+    <Link to="/" className="text-white hover:text-gray-300">Home</Link>
+    <Link to="/productos" className="text-white hover:text-gray-300">Contacto</Link>
+    </div>
+    </div>
+    
+        {isOpen && (
+    <div className="md:hidden">
+    <Link to="/" className="block text-white py-2 px-4 hover:bg-gray-700">Home</Link>
+    <Link to="/productos" className="block text-white py-2 px-4 hover:bg-gray-700">Contacto</Link>
+    </div>
+        )}
+    </nav>
+    );
+    };
+    
+export default Navbar;
