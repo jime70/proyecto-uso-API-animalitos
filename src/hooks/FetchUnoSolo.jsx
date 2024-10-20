@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react"
-import { fetchOneAnimal } from "../services/apianimal"
+import { fetchUnoSolo } from "../services/apianimal"
+import { fetchUnoSolo } from "../services/apiAdopcion"
 
-export const useFetchOneAnimal = (animalSearched) => {
-    const [ animal, setanimal ] = useState(null)
+export const useFetchUnoSolo = (animalSearched) => {
+    const [ adoptame, setadoptame ] = useState(null)
     const [ loading, setLoading ] = useState(true)
     const [ error, setError ] = useState(null)
 
     useEffect(() => {
-        const getanimal = async () => {
+        const getadoptame = async () => {
             try {
-                const dataanimal = await fetchOneanimal(animalSearched)
-                setanimal(dataanimal)
+                const dataadoptame= await fetchUnoSolo(animalSearched)
+                setadoptame(dataadoptame)
             } catch (err) {
                 setError(err)
             } finally {
@@ -18,12 +19,12 @@ export const useFetchOneAnimal = (animalSearched) => {
             }
         }
 
-        getanimal()
-    }, [animalSearched])
+        getadoptame()
+    }, [adoptameSearched])
 
     if(error) {
         throw error
     }
 
-    return { animal, loading }
+    return { adoptame, loading }
 }
