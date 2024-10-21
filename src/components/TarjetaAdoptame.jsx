@@ -1,13 +1,16 @@
 import React from 'react';
 
 export const TarjetaAdoptame = ({ adoptame }) => {
-    const { imagen, nombre, tipo, edad, genero, comuna, vacunas } = adoptame;
+    const { imagen, nombre, id, tipo, edad, genero, comuna, vacunas } = adoptame;
 
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
         <img className="w-full h-48 object-cover" src={imagen} alt={nombre} />
         <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">{nombre}</div>
+            <p className="text-gray-700 text-base mb-2">
+            <span className="font-semibold">ID:</span> {id}
+            </p>
             <p className="text-gray-700 text-base mb-2">
             <span className="font-semibold">Tipo:</span> {tipo}
             </p>
