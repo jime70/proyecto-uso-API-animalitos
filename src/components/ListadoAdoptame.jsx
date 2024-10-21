@@ -1,7 +1,7 @@
 //listado para llamar después a los animalitos
 //import React from 'react';
 import { TarjetaAdoptame } from './TarjetaAdoptame'; // Exportación nombrada
-import { FetchAnimalitos } from '../hooks/fetchAnimalitos';
+import { FetchAnimalitos } from '../hooks/FetchAnimalitos.jsx';
 
 export const ListadoAdoptame = () => {
     const { animales, loading } = FetchAnimalitos();
