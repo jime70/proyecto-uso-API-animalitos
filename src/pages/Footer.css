@@ -4,3 +4,8 @@ footer {
     padding: 5rem;
     text-align: center;
 }
+
+.texto {
+    text-align: center;
+    font-weight: bold;
+}
