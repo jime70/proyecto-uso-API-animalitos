@@ -2,7 +2,6 @@
 import { Home } from "./pages/Home";
 import  Navbar from './components/Navbar';
 import "./App.css";
-import NavegacionAdopcion from "./components/navBar2.jsx";
 import { Footer } from "../src/pages/Footer.jsx"
 import BasicGrid from "../src/components/BasicGrid.jsx"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
