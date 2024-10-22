@@ -20,9 +20,7 @@ export const Home = () => {
         
 
             <section>
-                {/* <ErrorBoundary FallbackComponent={ErrorFallBack} onReset={() => window.location.reload()}> */}
                     <ListadoAdoptame/>
-                {/* </ErrorBoundary> */}
             </section>
             </ErrorBoundary>
         </>

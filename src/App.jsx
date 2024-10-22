@@ -1,4 +1,4 @@
-//import React from 'react';
+import React from 'react';
 import { Home } from "./pages/Home";
 import  Navbar from './components/Navbar';
 import "./App.css";
@@ -15,7 +15,7 @@ export const App = () => {
         <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/productos" element={<BasicGrid />} />
+            <Route path="/contacto" element={<BasicGrid />} />
           </Routes>
         <Footer />
   </div>

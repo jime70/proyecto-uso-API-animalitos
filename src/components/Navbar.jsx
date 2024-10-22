@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Contacto from '../pages/contacto';
     
     const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +8,7 @@ import { Link } from 'react-router-dom';
     return (
     <nav className="bg-gray-800 p-4">
     <div className="container mx-auto flex justify-between items-center">
-    <Link to="/" className="text-white font-bold text-xl">Logo</Link>
+    <Link to="/" className="text-white font-bold text-xl">Bootcamp UDD</Link>
     <div className="md:hidden">
     <button onClick={() => setIsOpen(!isOpen)} className="text-white">
     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -18,7 +19,7 @@ import { Link } from 'react-router-dom';
     
             <div className="hidden md:flex space-x-4">
     <Link to="/" className="text-white hover:text-gray-300">Home</Link>
-    <Link to="/productos" className="text-white hover:text-gray-300">Contacto</Link>
+    <Link to="/contacto" className="text-white hover:text-gray-300">Contacto</Link>
     </div>
     </div>
     
